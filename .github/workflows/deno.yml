@@ -34,4 +34,5 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: androla10-androla10
-          entrypoint: main.ts
+          entrypoint: https://deno.land/std@0.205.0/http/file_server.ts
+          root: /
