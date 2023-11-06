@@ -35,7 +35,6 @@ jobs:
        with:
         project: androla10-androla10
         entrypoint: main.ts
-        root: /
   test:
     runs-on: ubuntu-latest
 
