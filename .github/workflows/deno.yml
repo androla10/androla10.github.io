@@ -18,6 +18,24 @@ permissions:
   contents: read
 
 jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+    
+    steps:
+      -name: Clone Repository
+       uses: actions/checkout@v3
+
+      -name: Deploy to Androla10 GitHubPage Deploy with Deno
+       uses: denoland/deployctl@v1
+       with:
+        project: androla10-androla10
+        entrypoint: main.ts
+        root: /
   test:
     runs-on: ubuntu-latest
 
