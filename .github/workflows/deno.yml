@@ -33,6 +33,6 @@ jobs:
       - name: Deploy to Androla10 GitHubPage Deploy with Deno
         uses: denoland/deployctl@v1
         with:
-          project: androla10-androla10
+          project: zeler.dev
           entrypoint: https://deno.land/std@0.205.0/http/file_server.ts
           root: ./
