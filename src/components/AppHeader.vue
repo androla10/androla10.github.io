@@ -4,25 +4,25 @@
       <ul>
         <li>
           <RouterLink to="/about" :class="{ active: isActiveRoute('/about') }">
-            <span class="icon ion-md-person"></span>
+            <font-awesome-icon :icon="['fas', 'user']" class="icon" />
             <span class="link">Sobre mí</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink to="/resume" :class="{ active: isActiveRoute('/resume') }">
-            <span class="icon ion-md-bookmarks"></span>
+            <font-awesome-icon :icon="['fas', 'bookmark']" class="icon" />
             <span class="link">Resumen</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink to="/services" :class="{ active: isActiveRoute('/services') }">
-            <span class="icon ion-md-code-working"></span>
+            <font-awesome-icon :icon="['fas', 'code']" class="icon" />
             <span class="link">Servicios</span>
           </RouterLink>
         </li>
         <li>
           <RouterLink to="/contact" :class="{ active: isActiveRoute('/contact') }">
-            <span class="icon ion-md-at"></span>
+            <font-awesome-icon :icon="['fas', 'envelope']" class="icon" />
             <span class="link">Contáctame</span>
           </RouterLink>
         </li>
