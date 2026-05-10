@@ -8,7 +8,7 @@
           <div class="col-d-12 col-t-12 col-m-12 border-line-v">
             <div class="text-box">
               <p>
-                Con 9 años de experiencia en tecnología Java, he trabajado en diversas empresas como
+                Con 10 años de experiencia en tecnología Java, he trabajado en diversas empresas como
                 Bitacore SAC, Manpower SAC, Multiplica y NTTDATA. Mi trayectoria incluye roles como
                 Analista Programador Java, Java Senior Developer, Full Stack Developer y Líder
                 Técnico.
@@ -27,7 +27,7 @@
 
             <div class="info-list">
               <ul>
-                <li><strong>Edad:</strong> 30</li>
+                <li><strong>Edad:</strong> 32</li>
                 <li><strong>Residencia:</strong> Lima, Perú</li>
                 <li><strong>Freelance:</strong> Disponible</li>
                 <li><strong>Dirección:</strong> Surquillo, Lima</li>

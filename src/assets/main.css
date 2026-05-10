@@ -69,8 +69,25 @@
     }
   }
 
-  .container {
-    @apply relative z-10 max-w-[990px] mx-auto mt-8 mb-8 mr-4 ml-4;
+.container {
+    @apply relative z-10 w-full max-w-[990px] mx-auto mt-8 mb-8 px-4;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      @apply mt-4 mb-4 px-2;
+    }
+
+    .content {
+      @apply p-4;
+    }
+
+    .profile {
+      @apply p-4 rounded-none border-x-0 border-b-0;
+      .slide {
+        @apply rounded-none;
+      }
+    }
   }
 
   .card-inner {
@@ -100,8 +117,8 @@
   }
 
   @media (max-width: 768px) {
-    .border-line-v {
-      @apply border-r-0 border-b border-gray-700;
+    .container {
+      @apply mt-4 mb-4 px-2;
     }
   }
 
