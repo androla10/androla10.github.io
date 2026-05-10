@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://unpkg.com/ionicons@4.5.10-1/dist/css/ionicons.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-poppins bg-darker text-white antialiased;
+    overflow-x: hidden;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  p {
+    @apply leading-relaxed text-gray-300;
+  }
+
+  strong {
+    @apply font-semibold text-white;
+  }
+}
+
+@layer components {
+  .page {
+    @apply w-full min-h-screen relative overflow-hidden;
+  }
+
+  .background {
+    @apply fixed inset-0 z-0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+  }
+
+  .bg-bubbles {
+    @apply absolute inset-0 overflow-hidden;
+    li {
+      @apply absolute block w-10 h-10 rounded-full bg-primary opacity-30 list-none;
+      bottom: -150px;
+      animation: bubble 8s infinite ease-in-out;
+      &:nth-child(1) { left: 10%; animation-delay: 0s; width: 80px; height: 80px; }
+      &:nth-child(2) { left: 20%; animation-delay: 2s; width: 20px; height: 20px; }
+      &:nth-child(3) { left: 25%; animation-delay: 4s; width: 100px; height: 100px; }
+      &:nth-child(4) { left: 40%; animation-delay: 0s; width: 60px; height: 60px; }
+      &:nth-child(5) { left: 70%; animation-delay: 3s; width: 30px; height: 30px; }
+      &:nth-child(6) { left: 80%; animation-delay: 5s; width: 90px; height: 90px; }
+      &:nth-child(7) { left: 35%; animation-delay: 1s; width: 50px; height: 50px; }
+      &:nth-child(8) { left: 55%; animation-delay: 6s; width: 70px; height: 70px; }
+      &:nth-child(9) { left: 15%; animation-delay: 2s; width: 40px; height: 40px; }
+      &:nth-child(10) { left: 90%; animation-delay: 4s; width: 60px; height: 60px; }
+    }
+  }
+
+  .container {
+    @apply relative z-10 max-w-[990px] mx-auto mt-8 mb-8 mr-4 ml-4;
+  }
+
+  .card-inner {
+    @apply hidden;
+    &.active {
+      @apply block animate-fadeInLeft;
+    }
+  }
+
+  .card-wrap {
+    @apply bg-darker bg-opacity-90 rounded-2xl border border-gray-800 overflow-hidden shadow-2xl;
+  }
+
+  .content {
+    @apply p-8 md:p-12;
+    .title {
+      @apply text-2xl font-bold text-white mb-8 pb-4 border-b border-gray-700;
+    }
+  }
+
+  .border-line-v {
+    @apply border-r border-gray-700;
+  }
+
+  .border-line-h {
+    @apply border-b border-gray-700;
+  }
+
+  @media (max-width: 768px) {
+    .border-line-v {
+      @apply border-r-0 border-b border-gray-700;
+    }
+  }
+
+  .clear {
+    @apply clear-both;
+  }
+
+  .header {
+    @apply mb-6;
+  }
+
+  .top-menu {
+    @apply flex justify-center;
+    ul {
+      @apply flex gap-2 bg-darker bg-opacity-90 rounded-full px-6 py-3 shadow-lg;
+      li {
+        @apply list-none;
+        a {
+          @apply flex items-center gap-2 px-5 py-3 rounded-full text-gray-400 transition-all duration-300;
+          &:hover, &.router-link-active, &.active {
+            @apply text-white bg-gray-800;
+          }
+          .icon {
+            @apply text-lg;
+          }
+          .link {
+            @apply text-sm font-medium;
+          }
+        }
+      }
+    }
+  }
+
+  .card-started {
+    @apply max-w-full;
+  }
+
+  .profile {
+    @apply relative flex flex-col items-center text-center bg-darker bg-opacity-90 rounded-2xl p-8 shadow-2xl border border-gray-800;
+    .slide {
+      @apply absolute inset-0 rounded-2xl bg-cover bg-center opacity-20;
+    }
+    .image {
+      @apply relative z-10 w-36 h-36 rounded-full overflow-hidden border-4 border-primary shadow-lg mb-6;
+      img {
+        @apply w-full h-full object-cover;
+      }
+    }
+    .title {
+      @apply relative z-10 text-3xl font-bold text-white mb-2;
+    }
+    .subtitle {
+      @apply relative z-10 text-gray-300 text-lg mb-6;
+    }
+    .social {
+      @apply relative z-10 flex gap-4 mb-8;
+      a {
+        @apply flex items-center justify-center w-10 h-10 rounded-full bg-gray-800 text-gray-400 hover:text-white hover:bg-primary transition-all duration-300;
+        .fab {
+          @apply text-lg;
+        }
+      }
+    }
+    .lnks {
+      @apply relative z-10 flex gap-4;
+      .lnk {
+        @apply flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300;
+      }
+    }
+  }
+
+  .resume-title {
+    @apply flex items-center gap-3 mb-6 pb-4;
+    .icon {
+      @apply text-2xl text-primary;
+    }
+    .name {
+      @apply text-xl font-semibold text-white;
+    }
+  }
+
+  .resume-item {
+    @apply mb-8;
+    .date {
+      @apply text-sm text-primary mb-2;
+    }
+    .name {
+      @apply text-lg font-semibold text-white mb-1;
+    }
+    .company {
+      @apply text-gray-500 mb-3;
+    }
+  }
+
+  .skill-title {
+    @apply flex items-center gap-3 mb-6 pb-4;
+    .icon {
+      @apply text-2xl text-primary;
+    }
+    .name {
+      @apply text-xl font-semibold text-white;
+    }
+  }
+
+  .skills-list {
+    ul {
+      @apply space-y-5;
+      li {
+        @apply mb-0;
+        .name {
+          @apply text-sm font-medium text-gray-300 mb-2;
+        }
+        .progress {
+          @apply h-2 bg-gray-800 rounded-full overflow-hidden;
+          .percentage {
+            @apply h-full bg-primary rounded-full;
+          }
+        }
+      }
+    }
+  }
+
+  .service-item {
+    @apply mb-8;
+    .icon {
+      @apply text-4xl text-primary mb-4;
+    }
+    .name {
+      @apply text-lg font-semibold text-white mb-3;
+    }
+  }
+
+  .info-list {
+    @apply mt-8;
+    ul {
+      @apply space-y-3;
+      li {
+        @apply text-gray-300;
+        strong {
+          @apply text-white;
+        }
+      }
+    }
+  }
+
+  .text-box {
+    p {
+      @apply mb-4;
+    }
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes bubble {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-100px) scale(1.1);
+    opacity: 0.3;
+  }
+}
